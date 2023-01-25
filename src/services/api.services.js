@@ -8,7 +8,7 @@ export const apiServices = {
       const res = await axios.get(`${apiUrl}/Users`);
       return res.data;
     } catch (err) {
-      document.write(err);
+      console.warn(err);
     }
   },
   postUser: async (newUser) => {
@@ -16,7 +16,7 @@ export const apiServices = {
       const res = await axios.post(`${apiUrl}/Users`, newUser);
       return res.data;
     } catch (err) {
-      document.write(err);
+      console.warn(err);
     }
   },
   getProducts: async () => {
@@ -24,7 +24,7 @@ export const apiServices = {
       const res = await axios.get(`${apiUrl}/Products`);
       return res.data;
     } catch (err) {
-      document.write(err);
+      console.warn(err);
     }
   },
   getProductById: async (productId) => {
@@ -32,7 +32,7 @@ export const apiServices = {
       const res = await axios.get(`${apiUrl}/Products`);
       return res.data.find((item) => item.id == productId);
     } catch (err) {
-      document.write(err);
+      console.warn(err);
     }
   },
   postProduct: async (newProduct) => {
@@ -40,7 +40,7 @@ export const apiServices = {
       const res = await axios.post(`${apiUrl}/Products`, newProduct);
       return res.data;
     } catch (err) {
-      document.write(err);
+      console.warn(err);
     }
   },
   updateProduct: async (productId, newProduct) => {
@@ -51,14 +51,14 @@ export const apiServices = {
       );
       return res.data;
     } catch (err) {
-      console.log(err);
+      console.warn(err);
     }
   },
   deleteProduct: async (productId) => {
     try {
       await axios.delete(`${apiUrl}/Products/${productId}`);
     } catch (err) {
-      console.log(err);
+      console.warn(err);
     }
   },
   getUserOrders: async (userId) => {
@@ -66,7 +66,7 @@ export const apiServices = {
       const res = await axios.get(`${apiUrl}/Users/${userId}/Orders`);
       return res.data;
     } catch (err) {
-      document.write(err);
+      console.warn(err);
     }
   },
   postUserOrder: async (userId, newOrder) => {
@@ -77,7 +77,7 @@ export const apiServices = {
       );
       return res.data;
     } catch (err) {
-      document.write(err);
+      console.warn(err);
     }
   },
   postUserComment: async (formData) => {

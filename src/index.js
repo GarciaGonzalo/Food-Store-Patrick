@@ -1,15 +1,7 @@
 import "./style.scss";
-import { apiServices } from "./services/api.services.js";
+import { Render } from "./helpers/Render";
+import { ChangePath } from "./helpers/ChangePath";
+import { Context } from "./helpers/Context";
 
-let users = [];
-
-const showUsers = async () => {
-  users = await apiServices.getUsers();
-  console.log(users);
-};
-
-document.addEventListener("load", () => {
-    showUsers()
-});
-
-document.removeEventListener("unload", showUsers());
+document.addEventListener("DOMContentLoaded", Render);
+document.addEventListener("DOMContentLoaded", ChangePath);

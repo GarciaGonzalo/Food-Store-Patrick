@@ -1,0 +1,19 @@
+input#searchBar {
+    text-align: center;
+    color: #7e0a0a;
+    font-weight: 600;
+    border: 1px solid #7e0a0a;
+    padding: 5px;
+    border-radius: 10px;
+    align-self: center;
+    margin: 20px;
+    &:focus {
+        outline: none;
+        &::placeholder {
+            color: #fff;
+        }
+    }    
+    &::placeholder {
+        color: #7e0a0a;
+    }
+}
