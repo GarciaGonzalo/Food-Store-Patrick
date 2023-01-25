@@ -1,1 +1,7 @@
 @import '../ProductCard/ProductCard.scss';
+
+#productsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}

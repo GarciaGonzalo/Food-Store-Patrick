@@ -1,4 +1,4 @@
 export const Link = (children) => {
-  const link = `<div class="product-card__show-more">${children}</button>`;
+  const link = `<div class="button-link">${children}</div>`;
   return link;
 };
