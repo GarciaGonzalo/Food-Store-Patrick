@@ -1,41 +1,34 @@
 import { HomePage } from "../views/HomePage/HomePage";
-import { ChangePath } from "./ChangePath";
+import { ProductPage } from "../views/ProductPage/ProductPage";
 import { Context } from "./Context";
-import { FilterBySearch } from "./Filter";
 import { Routes } from "./Routes";
-const app = document.getElementById("app");
-
-let context = {};
-
-const getContext = async () => {
-  context = await Context();
-};
 
 export const Render = async () => {
-  await getContext();
-  const PATH = document.location.pathname;
-  let template = "";
+  const $APP = document.getElementById("app");
+  const HASH = window.location.hash;
+  const CONTEXT = await Context();
+
+  $APP.innerHTML = "";
   const { Home, Cart, Checkout, Product, Login } = Routes;
 
-  switch (PATH) {
-    case Home:
-      template = HomePage(context);
-      break;
+  const productId = localStorage.getItem("selected-product-food-patrick");
+  const productPage = `${Product}${productId}`;
+
+  switch (HASH) {
     case Login:
-      template = Login(context);
+      $APP.appendChild(Login(CONTEXT));
       break;
-    case Product:
-      template = Product(context);
+    case productPage:
+      $APP.appendChild(await ProductPage(CONTEXT));
       break;
     case Cart:
-      template = Cart(context);
+      $APP.appendChild(Cart(CONTEXT));
       break;
-    case Checkout:
-      template = Checkout(context);
+    default:
+      $APP.appendChild(await HomePage(CONTEXT));
       break;
   }
-
-  app.innerHTML = template;
-  FilterBySearch();
-  ChangePath();
 };
+
+
+window.addEventListener('hashchange', Render)

@@ -1,10 +1,20 @@
+import { CreateElement } from "../../helpers/CreateElement.js";
 import { ProductCard } from "../ProductCard/ProductCard.js";
 
-export const ProductsContainer = (products) => {
-  let template = '<div id="productsContainer" >'
+export const ProductsContainer = async (products) => {
+  let children = [];
   for (let product of products) {
-    template += ProductCard(product);
+    let card = await ProductCard(product);    
+    children.push(card)
   }
-  template += "</div>"
-  return template;
+
+  const PROPS = {
+    tagName: "div",
+    attributes: [{ prop: "id", value: "productsContainer" }],
+    children,
+  };
+
+  const $ProductsContainer = CreateElement(PROPS);
+
+  return $ProductsContainer;
 };

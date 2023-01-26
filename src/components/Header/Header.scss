@@ -6,17 +6,17 @@
 header {
   display: flex;
   flex-direction: column;
-  #menuAndCartContainer {
+  #cartContainer {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
+    justify-content: flex-end;
+    margin-bottom: 2px;
   }
-  #logoContainer {
+  #siteLogoContainer {
     display: flex;
     align-items: center;
     background: #7e0a0a;
     color: #fff;
-    img {
+    img#siteLogo {
       width: 75px;
       height: 75px;
       margin: 10px;
@@ -26,9 +26,25 @@ header {
       font-style: italic;
     }
   }
-  #searchAndLoginContainer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+}
+
+@media screen and (min-width: $mid-devices-min) {
+  header {
+   
+    #logosContainer {
+      display: flex;
+      justify-content: space-between;
+      background: #7e0a0a;
+      #siteLogoContainer {
+        display: flex;
+        align-items: center;
+      }
+      #loginLogoContainer {
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+      }
+    }
   }
 }
+

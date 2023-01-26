@@ -18,9 +18,9 @@ export const Context = async (newData = null) => {
     userLogged: JSON.parse(localStorage.getItem("user-logged")) || null,
     userIsAdmin: JSON.parse(localStorage.getItem("user-is-admin")) || false,
     products: await setProducts(),
-    cart: JSON.parse(localStorage.getItem("productsInCart")) || [],
-    inputValue: localStorage.getItem("input-search-value")
-      ? localStorage.getItem("input-search-value")
+    cart: JSON.parse(localStorage.getItem("cart-food-patrick")) || [],
+    inputValue: localStorage.getItem("input-search-value-food-patrick")
+      ? localStorage.getItem("input-search-value-food-patrick")
       : "",
   };
 

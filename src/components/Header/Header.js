@@ -1,78 +1,56 @@
 import { Context } from "../../helpers/Context";
+import { CreateElement } from "../../helpers/CreateElement";
 import { Devices } from "../../helpers/Devices";
-import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
 import { CartLogo } from "../CartLogo/CartLogo";
-import { LoginLogo } from "../LoginLogo/LoginLogo";
 import { SearchBar } from "../SearchBar/SearchBar";
 
-const MobileHeader = (context) => {
-  const { userLogged, userIsAdmin, products, cart, inputValue } = context;
+// Header component export
 
-  let template = `<header><div id="menuAndCartContainer">`;
-  template += BurgerMenu();
-  template += CartLogo();
-  template += `</div><div id="logoContainer">
-            <img src="https://i.imgur.com/KtczzTn.jpg" alt="site logo" />
-            <h1>Tienda de Comidas Patrick</h1>
-        </div>`;
-  template += SearchBar(inputValue);
-  template += `</header>`;
+export const Header = async (context) => {
+  const { inputValue } = context;
 
-  return template;
-};
+  const CART_CONTAINER_PROPS = {
+    tagName: "div",
+    attributes: [{ prop: "id", value: "cartContainer" }],
+    children: [await CartLogo()],
+  };
+  const $CartContainer = CreateElement(CART_CONTAINER_PROPS);
 
-const TabletHeader = (context) => {
-  const { userLogged, userIsAdmin, products, cart, inputValue } = context;
+  const LOGO_IMAGE_PROPS = {
+    tagName: "img",
+    attributes: [
+      { prop: "id", value: "siteLogo" },
+      { prop: "src", value: "https://i.imgur.com/KtczzTn.jpg" },
+      { prop: "alt", value: "Site Logo" },
+    ],
+  };
+  const LOGO_TITLE_PROPS = {
+    tagName: "h1",
+    textContent: "Tienda de Comidas Patrick",
+  };
 
-  let template = `<header>`;
-  if (window.innerWidth < 768) {
-    template += BurgerMenu();
-  }
-  template += `<div id="logoContainer">
-              <img src="https://i.imgur.com/KtczzTn.jpg" alt="site logo" />
-              <h1>Tienda de Comidas Patrick</h1>
-          </div>
-          <div id="searchAndLoginContainer">
-          `;
-  template += SearchBar(inputValue);
-  template += LoginLogo();
-  template += `</div></header>`;
+  let $LogoImage = CreateElement(LOGO_IMAGE_PROPS);
+  let $LogoTitle = CreateElement(LOGO_TITLE_PROPS);
 
-  return template;
-};
+  const SITE_LOGO_CONTAINER_PROPS = {
+    tagName: "div",
+    attributes: [{ prop: "id", value: "siteLogoContainer" }],
+    children: [$LogoImage, $LogoTitle],
+  };
+  const $SiteLogoContainer = CreateElement(SITE_LOGO_CONTAINER_PROPS);
+  
+  const HEADER_PROPS = {
+    tagName: "header",
+    attributes: [
+      {
+        prop: "id",
+        value: "header",
+      },
+    ],
+    children: [$CartContainer, $SiteLogoContainer, SearchBar(inputValue)],
+  };
 
-const DesktopHeader = (context) => {
-  const { userLogged, userIsAdmin, products, cart, inputValue } = context;
+  const $Header = CreateElement(HEADER_PROPS);
 
-  let template = `<header>`;
-  if (window.innerWidth < 768) {
-    template += BurgerMenu();
-  }
-  template += `<div id="logoContainer">
-              <img src="https://i.imgur.com/KtczzTn.jpg" alt="site logo" />
-              <h1>Tienda de Comidas Patrick</h1>
-          </div>
-          <div id="searchAndLoginContainer">
-          `;
-  template += SearchBar(inputValue);
-  template += LoginLogo();
-  template += `</div></header>`;
-
-  return template;
-};
-
-export const Header = (context) => {
-  const { userLogged, userIsAdmin, products, cart, inputValue } = context;
-  const WH = window.innerWidth;
-  let template;
-
-  if (WH < Devices.medium) {
-    template = MobileHeader(context);
-  } else if (WH >= Devices.medium && WH < Devices.large) {
-    template = TabletHeader(context);
-  } else {
-    template = DesktopHeader(context);
-  }
-
-  return template;
+  return $Header;
 };
