@@ -107,6 +107,21 @@ const MobileProductPage = (product) => {
   };
   const $ButtonContainer = CreateElement(BUTTON_CONTAINER_PROPS);
 
+  const GO_TO_CART_PROPS = {
+    tagName: 'a',
+    attributes: [{prop: 'id', value: 'productPage__goToCart'}, {prop: 'href', value: '#/cart'}],
+    textContent: 'Ir al carrito de compras'
+  }
+  const $GoToCart = CreateElement(GO_TO_CART_PROPS);
+
+  const GO_TO_CART_CONTAINER_PROPS = {
+    tagName: "div",
+    attributes: [{ prop: "id", value: "productPage__goToCartContainer" }],
+    children: [$GoToCart],
+  };
+  const $GoToCartContainer = CreateElement(
+    GO_TO_CART_CONTAINER_PROPS
+  );
   // Getting all the parts together
   const MOBILE_PRODUCT_PAGE_PROPS = {
     tagName: "div",
@@ -117,6 +132,7 @@ const MobileProductPage = (product) => {
       $ProductPriceContainer,
       $ProductDescriptionContainer,
       $ButtonContainer,
+      $GoToCartContainer
     ],
   };
 

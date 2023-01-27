@@ -57,4 +57,19 @@
       }
     }
   }
+  #productPage__goToCartContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+    #productPage__goToCart {
+      font-style: normal;
+      font-size: 14px;
+      padding: 8px;
+      border-radius: 8px;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
 }
