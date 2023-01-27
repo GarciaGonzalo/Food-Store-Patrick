@@ -33,7 +33,7 @@ const cartOperation = async ({ target }) => {
       if (target.className === "cart-product-card__add-button") {
         prod.quantity++;
         localStorage.setItem("cart-food-patrick", JSON.stringify(cart));
-        Render;
+        Render();
       } else {
         prod.quantity--;
 
