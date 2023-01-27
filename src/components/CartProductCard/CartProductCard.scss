@@ -6,9 +6,12 @@
     padding: 10px;
     border-bottom: 1px dashed #fff;
     img.cart-product-card__image {
-      width: 120px;
-      height: 100px;
+      width: 100px;
+      height: 95px;
       max-width: 40%;
+      margin-right: 10px;
+    }
+    .cart-product-card__name-and-quantity-container {
       margin-right: 10px;
     }
     .cart-product-card__buttons-container {
@@ -47,3 +50,18 @@
   }
 }
 
+@media screen and (min-width: $large-devices-min) {
+  #cartPage__cardsContainer {
+    font-size: 20px;
+    .cart-product-card__name-and-quantity-container {
+      width: 100px;
+    }
+    .cart-product-card__buttons-container {
+      width: 100px;
+    }
+    .cart-product-card__price-container {
+      width: 100px;
+    }
+  }
+
+}

@@ -1,0 +1,14 @@
+footer#footer {
+  background: #7e0a0a;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  font-style: italic;
+  img#siteLogoFooter {
+    width: 75px;
+    height: 75px;
+    margin: 10px;
+  }
+}

@@ -4,7 +4,6 @@ import { Cart } from "../views/Cart/Cart";
 import { Context } from "./Context";
 import { Routes } from "./Routes";
 
-
 export const Render = async () => {
   const $APP = document.getElementById("app");
   const HASH = window.location.hash;
@@ -30,4 +29,4 @@ export const Render = async () => {
 };
 
 window.addEventListener("hashchange", Render);
-window.removeEventListener('unload', Render);
+window.removeEventListener("unload", Render);

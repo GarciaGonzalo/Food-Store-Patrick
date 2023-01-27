@@ -24,12 +24,12 @@ export const Header = async (context) => {
       { prop: "alt", value: "Site Logo" },
     ],
   };
+  let $LogoImage = CreateElement(LOGO_IMAGE_PROPS);
+
   const LOGO_TITLE_PROPS = {
     tagName: "h1",
     textContent: "Tienda de Comidas Patrick",
   };
-
-  let $LogoImage = CreateElement(LOGO_IMAGE_PROPS);
   let $LogoTitle = CreateElement(LOGO_TITLE_PROPS);
 
   const SITE_LOGO_CONTAINER_PROPS = {
@@ -38,7 +38,7 @@ export const Header = async (context) => {
     children: [$LogoImage, $LogoTitle],
   };
   const $SiteLogoContainer = CreateElement(SITE_LOGO_CONTAINER_PROPS);
-  
+
   const HEADER_PROPS = {
     tagName: "header",
     attributes: [
@@ -47,7 +47,7 @@ export const Header = async (context) => {
         value: "header",
       },
     ],
-    children: [$CartContainer, $SiteLogoContainer, SearchBar(inputValue)],
+    children: [$SiteLogoContainer, $CartContainer, SearchBar(inputValue)],
   };
 
   const $Header = CreateElement(HEADER_PROPS);

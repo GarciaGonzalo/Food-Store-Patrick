@@ -21,10 +21,12 @@ const confirmBuy = ({ target }) => {
     title: "Compra confirmada!",
     text: "Gracias por elegirnos, que disfrute su pedido!",
     icon: "success",
-    confirmButtonText: "Cool",
+    confirmButtonText: "Volver",
+    color: "#fff",
+    background: "#7e0a0a",
   });
   localStorage.removeItem("cart-food-patrick");
   Render();
 };
 
-document.addEventListener('click', confirmBuy)
+document.addEventListener("click", confirmBuy);
