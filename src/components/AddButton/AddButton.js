@@ -1,5 +1,6 @@
 import { Context } from "../../helpers/Context";
 import { CreateElement } from "../../helpers/CreateElement";
+import Swal from "sweetalert2";
 
 const AddToCart = async ({ target }) => {
   if (target.id.slice(0, 24) !== "productCard__addButton__") {
@@ -27,6 +28,14 @@ const AddToCart = async ({ target }) => {
     CART.push({ product: PRODUCT, quantity: 1 });
     localStorage.setItem("cart-food-patrick", JSON.stringify(CART));
   }
+  Swal.fire({
+    title: "Producto agregado!",
+    text: `Tienes ${productToCart.quantity} unidades de este producto en el carrito`,
+    icon: "success",
+    confirmButtonText: "Seguir comprando",
+    color: "#fff",
+    background: "#7e0a0a",
+  });
 };
 
 export const AddButton = (product) => {

@@ -1,6 +1,6 @@
 import { CreateElement } from "../../helpers/CreateElement";
-import Swal from "sweetalert2";
 import { Render } from "../../helpers/Render";
+import Swal from "sweetalert2";
 
 export const ConfirmBuyButton = () => {
   const PROPS = {
