@@ -10,10 +10,7 @@ const setProducts = async () => {
   return products;
 };
 
-let timeOut;
-
 export const Context = async (newData = null) => {
-  clearTimeout(timeOut);
   let data = {
     userLogged: JSON.parse(localStorage.getItem("user-logged")) || null,
     userIsAdmin: JSON.parse(localStorage.getItem("user-is-admin")) || false,

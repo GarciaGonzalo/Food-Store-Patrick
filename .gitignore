@@ -1,3 +1,6 @@
 node_modules
 /dist
 BORRAR_CARPETA
+/src/components/BurgerMenu
+/src/components/LoginLogo
+/src/components/CategoriesContainer

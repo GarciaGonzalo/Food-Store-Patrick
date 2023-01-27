@@ -1,7 +1,9 @@
 import { HomePage } from "../views/HomePage/HomePage";
 import { ProductPage } from "../views/ProductPage/ProductPage";
+import { Cart } from "../views/Cart/Cart";
 import { Context } from "./Context";
 import { Routes } from "./Routes";
+
 
 export const Render = async () => {
   const $APP = document.getElementById("app");
@@ -9,20 +11,17 @@ export const Render = async () => {
   const CONTEXT = await Context();
 
   $APP.innerHTML = "";
-  const { Home, Cart, Checkout, Product, Login } = Routes;
+  const { CartPage, Product } = Routes;
 
   const productId = localStorage.getItem("selected-product-food-patrick");
   const productPage = `${Product}${productId}`;
 
   switch (HASH) {
-    case Login:
-      $APP.appendChild(Login(CONTEXT));
-      break;
     case productPage:
       $APP.appendChild(await ProductPage(CONTEXT));
       break;
-    case Cart:
-      $APP.appendChild(Cart(CONTEXT));
+    case CartPage:
+      $APP.appendChild(await Cart(CONTEXT));
       break;
     default:
       $APP.appendChild(await HomePage(CONTEXT));
@@ -30,5 +29,5 @@ export const Render = async () => {
   }
 };
 
-
-window.addEventListener('hashchange', Render)
+window.addEventListener("hashchange", Render);
+window.removeEventListener('unload', Render);

@@ -1,3 +1,5 @@
+@import "../../components/AddButton/AddButton.scss";
+
 #productPage {
   font-size: 16px;
   font-style: italic;
@@ -29,6 +31,10 @@
   #productPage__priceContainer {
     margin-left: 15px;
     height: 45px;
+    #productPage__oldPrice {
+      font-size: 12px;
+      text-decoration: line-through;
+    }
   }
   #productPage__descriptionContainer {
     margin-left: 15px;
@@ -45,6 +51,7 @@
       color: #7e0a0a;
       border: none;
       font-weight: 700;
+      cursor: pointer;
       &:hover {
         transform: scale(1.2);
       }

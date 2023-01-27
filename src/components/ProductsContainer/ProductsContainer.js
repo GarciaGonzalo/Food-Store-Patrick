@@ -2,7 +2,7 @@ import { CreateElement } from "../../helpers/CreateElement.js";
 import { ProductCard } from "../ProductCard/ProductCard.js";
 
 export const ProductsContainer = async (products) => {
-  let children = [];
+  const children = [];
   for (let product of products) {
     let card = await ProductCard(product);    
     children.push(card)

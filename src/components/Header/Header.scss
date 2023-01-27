@@ -1,5 +1,3 @@
-@import "../BurgerMenu/BurgerMenu.scss";
-@import "../LoginLogo/LoginLogo.scss";
 @import "../SearchBar/SearchBar.scss";
 @import "../CartLogo/CartLogo.scss";
 
@@ -38,11 +36,6 @@ header {
       #siteLogoContainer {
         display: flex;
         align-items: center;
-      }
-      #loginLogoContainer {
-        display: flex;
-        align-items: center;
-        margin-right: 10px;
       }
     }
   }

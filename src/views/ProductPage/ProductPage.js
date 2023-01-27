@@ -1,6 +1,5 @@
 import { CloseButton } from "../../components/CloseButton/CloseButton";
 import { CreateElement } from "../../helpers/CreateElement";
-import { Devices } from "../../helpers/Devices";
 import { getProductPrice } from "../../helpers/GetProductPrice";
 import { generatePriceContainerChildren } from "../../helpers/GeneratePriceContainerChildren";
 import { AddButton } from "../../components/AddButton/AddButton";

@@ -1,16 +1,8 @@
 import { CreateElement } from "../../helpers/CreateElement";
 import { getProductPrice } from "../../helpers/GetProductPrice";
 import { generatePriceContainerChildren } from "../../helpers/GeneratePriceContainerChildren";
-import { Context } from "../../helpers/Context";
-import { Render } from "../../helpers/Render";
 
-let context = {};
-const getContext = async () => {
-  context = await Context();
-};
-
-export const ProductCard = async (product) => {
-  await getContext();
+export const ProductCard = async (product) =>  {
   // Generate product image
   const PROD_IMG_PROPS = {
     tagName: "img",
