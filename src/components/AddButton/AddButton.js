@@ -12,7 +12,7 @@ const AddToCart = async ({ target }) => {
   const CART = CONTEXT.cart;
 
   let productIsInCart = false;
-  let productToCart = {};
+  let productToCart = {product: {}, quantity: 0};
 
   if (CART.length >= 1) {
     for (let prod of CART) {
@@ -28,9 +28,10 @@ const AddToCart = async ({ target }) => {
     CART.push({ product: PRODUCT, quantity: 1 });
     localStorage.setItem("cart-food-patrick", JSON.stringify(CART));
   }
+
   Swal.fire({
     title: "Producto agregado!",
-    text: `Tienes ${productToCart.quantity} unidades de este producto en el carrito`,
+    text: `Tienes ${productToCart.quantity + 1} unidades de este producto en el carrito`,
     icon: "success",
     confirmButtonText: "Seguir comprando",
     color: "#fff",
