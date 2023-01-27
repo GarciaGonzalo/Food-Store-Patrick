@@ -1,5 +1,6 @@
 import { CartProductCard } from "../../components/CartProductCard/CartProductCard";
 import { ClearCart } from "../../components/ClearCart/ClearCart";
+import { ConfirmBuyButton } from "../../components/ConfirmBuyButton/ConfirmBuyButton";
 import { CreateElement } from "../../helpers/CreateElement";
 import { getProductPrice } from "../../helpers/GetProductPrice";
 
@@ -25,7 +26,15 @@ export const Cart = async (context) => {
   };
   const $Title = CreateElement(TITLE_PROPS);
 
-  // Empty cart
+  // Clear cart
+  const CLEAR_CART_CONTAINER_PROPS = {
+    tagName: "div",
+    attributes: [{ prop: "id", value: "cartPage__clearCartContainer" }],
+    children: [ClearCart()],
+  };
+  const $ClearCartContainerProps = CreateElement(CLEAR_CART_CONTAINER_PROPS);
+
+  // Text for empty cart
   const EMPTY_CART_PROPS = {
     tagName: "p",
     attributes: [{ prop: "id", value: "emptyCart__title" }],
@@ -36,7 +45,7 @@ export const Cart = async (context) => {
   const TITLE_CONTAINER_PROPS = {
     tagName: "div",
     attributes: [{ prop: "id", value: "cartPage__titleContainer" }],
-    children: cart.length > 0 ? [$Title] : [$EmptyCart],
+    children: cart.length > 0 ? [ $ClearCartContainerProps, $Title] : [$EmptyCart],
   };
   const $TitleContainer = CreateElement(TITLE_CONTAINER_PROPS);
 
@@ -69,28 +78,22 @@ export const Cart = async (context) => {
   };
   const $CartPrice = CreateElement(CART_PRICE_PROPS);
 
-  const LENGTH_AND_PRICE_PROPS = {
+  const INFO_CONTAINER_PROPS = {
     tagName: "div",
     attributes: [
-      { prop: "id", value: "cartPage__cartLenghtAndPriceContainer" },
+      { prop: "id", value: "cartPage__cartInfoContainer" },
     ],
     children: [$CartLength, $CartPrice],
   };
-  const $CartLengthAndPriceContainer = CreateElement(LENGTH_AND_PRICE_PROPS);
+  const $CartInfoContainer = CreateElement(INFO_CONTAINER_PROPS);
 
-  const CLEAR_CART_CONTAINER_PROPS = {
-    tagName: "div",
-    attributes: [{ prop: "id", value: "cartPage__clearCartContainer" }],
-    children: [ClearCart()],
-  };
-  const $ClearCartContainerProps = CreateElement(CLEAR_CART_CONTAINER_PROPS);
-
+/* 
   const CART_INFO_CONTAINER_PROPS = {
     tagName: "div",
     attributes: [{ prop: "id", value: "cartPage__infoContainer" }],
-    children: [$CartLengthAndPriceContainer, $ClearCartContainerProps],
+    children: [$CartInfoContainer, $ClearCartContainerProps],
   };
-  const $CartInfoContainer = CreateElement(CART_INFO_CONTAINER_PROPS);
+  const $CartInfoContainer = CreateElement(CART_INFO_CONTAINER_PROPS); */
 
   // Button for going back to homepage and see products
   const GO_TO_PRODUCT_PROPS = {
@@ -110,6 +113,13 @@ export const Cart = async (context) => {
   };
   const $GoToProductsContainer = CreateElement(GO_TO_PRODUCTS_CONTAINER_PROPS);
 
+  const CONFIRM_BUY_CONTAINER_PROPS = {
+    tagName: "div",
+    attributes: [{ prop: "id", value: "cartPage__confirmBuyContainer" }],
+    children: [ConfirmBuyButton()],
+  };
+  const $ConfirmBuyContainer = CreateElement(CONFIRM_BUY_CONTAINER_PROPS);
+
   const CART_PROPS = {
     tagName: "div",
     attributes: [{ prop: "id", value: "cartPage" }],
@@ -119,6 +129,7 @@ export const Cart = async (context) => {
             $TitleContainer,
             $CartCardContainerProps,
             $CartInfoContainer,
+            $ConfirmBuyContainer,
             $GoToProductsContainer,
           ]
         : [$TitleContainer, $GoToProductsContainer],

@@ -6,7 +6,40 @@
     align-items: center;
     justify-content: center;
     border-bottom: 2px solid #fff;
-    padding-top: 40px;
+    flex-direction: column;
+    #cartPage__title {
+      font-size: 20px;
+      height: 20px;
+    }
+    #cartPage__clearCartContainer {
+      align-self: flex-end;
+      margin-top: 0;
+      img.cart-product-card__clear-cart {
+        width: 25px;
+        height: 25px;
+        margin: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+  #cartPage__cartInfoContainer {
+    margin-left: 10px;
+  }
+  #cartPage__confirmBuyContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    #cartPage__confirmBuyButton {
+      padding: 9px;
+      border-radius: 10px;
+      border: none;
+      color: #7e0a0a;
+      font-weight: 700;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
   }
   #cartPage__goToProductsContainer {
     display: flex;
