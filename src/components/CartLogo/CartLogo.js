@@ -5,7 +5,6 @@ const generateChildren = (cartLength, goToCart, quantity) => {
   let children = [];
   if (cartLength > 0) {
     children.push(quantity);
-    console.log(children);
   }
   children.push(goToCart);
 
@@ -20,7 +19,7 @@ export const CartLogo = async () => {
     tagName: "img",
     attributes: [
       { prop: "id", value: "cartImg" },
-      { prop: "src", value: "https://i.imgur.com/1rYaa2v.jpg" },
+      { prop: "src", value: "https://cdn-icons-png.flaticon.com/512/3144/3144456.png" },
       { prop: "alt", value: "Cart logo" },
     ],
  
@@ -52,6 +51,5 @@ export const CartLogo = async () => {
   };
 
   const $CartLogo = CreateElement(CART_LOGO_PROPS);
-  console.log($Quantity);
   return $CartLogo;
 };

@@ -40,7 +40,6 @@ const clearCartFunction = async ({ target }) => {
     return;
   }
 
-  console.log("target = ", target);
   if (target.className === "cart-product-card__clear-cart") {
     cart.splice(0, cart.length);
     localStorage.setItem("cart-food-patrick", JSON.stringify(cart));
@@ -48,7 +47,6 @@ const clearCartFunction = async ({ target }) => {
   } else {
     for (let prod of cart) {
       if (prod.product.id === productId) {
-        console.log("borrar el producto de id ", productId);
         cart.splice(cart.indexOf(prod), cart.indexOf(prod) + 1);
         localStorage.setItem("cart-food-patrick", JSON.stringify(cart));
         Render();

@@ -1,5 +1,7 @@
 @import "../SearchBar/SearchBar.scss";
 @import "../CartLogo/CartLogo.scss";
+@import "../../styles/variables.scss";
+@import "../../styles/variables.scss";
 
 header {
   display: flex;
@@ -12,12 +14,13 @@ header {
   #siteLogoContainer {
     display: flex;
     align-items: center;
-    background: #7e0a0a;
+    background: $primary-color;
     color: #fff;
+    padding: 5px 50px;
     img#siteLogo {
-      width: 75px;
-      height: 75px;
-      margin: 10px;
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
     }
     h1 {
       font-size: 20px;
@@ -32,7 +35,6 @@ header {
     #logosContainer {
       display: flex;
       justify-content: space-between;
-      background: #7e0a0a;
       #siteLogoContainer {
         display: flex;
         align-items: center;

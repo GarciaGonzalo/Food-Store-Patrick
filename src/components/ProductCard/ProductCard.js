@@ -26,7 +26,7 @@ export const ProductCard = async (product) =>  {
   const PROD_DISCOUNT_PROPS = {
     tagName: "div",
     attributes: [{ prop: "class", value: "product-card__discount" }],
-    textContent: `- $${product.discountPercentage}%`,
+    textContent: `-${product.discountPercentage}%`,
   };
   const $ProductDiscount = CreateElement(PROD_DISCOUNT_PROPS);
 

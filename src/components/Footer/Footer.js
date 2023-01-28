@@ -7,7 +7,7 @@ export const Footer = () => {
     tagName: "img",
     attributes: [
       { prop: "id", value: "siteLogoFooter" },
-      { prop: "src", value: "https://i.imgur.com/KtczzTn.jpg" },
+      { prop: "src", value: "https://cdn-icons-png.flaticon.com/512/1046/1046857.png" },
       { prop: "alt", value: "Site Logo" },
     ],
   };

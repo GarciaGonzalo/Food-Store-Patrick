@@ -13,3 +13,11 @@ units of the product to the cart.
 From there, he can go back to see more products or directly go to cart.
 Once in cart, there is the possibility to add or remove units of the products in cart, delete all the units of a product, or even empty the hole cart.
 If he wants, he can go back to the products, or finish the operation.
+
+
+
+
+# Fonts used in this design:
+Font: Playfair Display
+Author: Claus Eggers Sørensen
+Url: https://fonts.google.com/specimen/Playfair+Display

@@ -26,7 +26,6 @@ const cartOperation = async ({ target }) => {
 
   const CONTEXT = await Context();
   const { cart } = CONTEXT;
-  console.log("target ", target);
 
   for (let prod of cart) {
     if (prod.product.id === target.id) {
