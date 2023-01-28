@@ -1,6 +1,8 @@
 # Food-Store-Patrick
 Food-Store-Patrick is a Vanilla Javascript, SCSS, Webpack and Babel project, which I built for challenging myself with making a Single Page Aplication on pure JS.
 It mocks a food store where the user can see through each product, filter by name or category, and add each of them to the cart.
+In this project I tried to gain comprehension and knowledge about what goes under the hood when we use frameworks or libraries such as React, vue or Angular, and 
+what can be done with pure Javascript when trying to optimize our applications, having to go myself into generating renders, DOM manipulation with Javascript or state management.
 
 # How to run the project locally
 Clone the repository, install NPM and run npm start (for development mode) or npm production (for production mode).
